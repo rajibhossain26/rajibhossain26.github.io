@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rajib Hossain · GIScience & Environmental Health</title>
+<meta name="description" content="Rajib Hossain, PhD researcher in Geography at the University of Georgia. GIScience, remote sensing and GeoAI for environmental health, urban heat, healthcare access and disaster resilience.">
+<meta property="og:title" content="Rajib Hossain · GIScience & Environmental Health">
+<meta property="og:description" content="PhD researcher at the University of Georgia working on urban heat, greenness, healthcare access and disaster resilience with remote sensing and spatial analysis.">
+<meta property="og:type" content="website">
+<style>
+  :root {
+    --ink: #17212b; --muted: #5b6b7a; --line: #e3e8ee; --bg: #fbfcfd; --card: #ffffff;
+    --accent: #1f7a5a; --accent-soft: #e6f2ed; --warm: #c8553d;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --ink: #e8edf2; --muted: #9aa8b5; --line: #26313b; --bg: #0f151b; --card: #151d25; --accent: #4cc79a; --accent-soft: #15302a; --warm: #e8836b; }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+  nav { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 56px; }
+  nav .brand { font-weight: 700; color: var(--ink); letter-spacing: -0.01em; }
+  nav .links a { color: var(--muted); margin-left: 22px; font-size: 15px; }
+  nav .links a:hover { color: var(--ink); text-decoration: none; }
+  header { padding: 88px 0 56px; }
+  .eyebrow { color: var(--accent); font-weight: 600; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 14px; }
+  h1 { font-size: clamp(40px, 6vw, 60px); line-height: 1.05; letter-spacing: -0.03em; margin: 0 0 20px; }
+  .lede { font-size: 21px; color: var(--muted); max-width: 680px; margin: 0 0 30px; }
+  .lede strong { color: var(--ink); font-weight: 600; }
+  .buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn { display: inline-block; padding: 10px 18px; border-radius: 8px; border: 1px solid var(--line); color: var(--ink); background: var(--card); font-weight: 600; font-size: 15px; }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn:hover { text-decoration: none; transform: translateY(-1px); }
+  section { padding: 56px 0; border-top: 1px solid var(--line); }
+  h2 { font-size: 28px; letter-spacing: -0.02em; margin: 0 0 8px; }
+  .sub { color: var(--muted); margin: 0 0 32px; }
+  .themes { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; }
+  .theme { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
+  .theme .icon { font-size: 26px; }
+  .theme h3 { font-size: 17px; margin: 8px 0 6px; }
+  .theme p { margin: 0; color: var(--muted); font-size: 15px; }
+  .projects { display: grid; gap: 18px; }
+  .project { display: grid; grid-template-columns: 1fr auto; gap: 8px 24px; background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 12px; padding: 22px 24px; }
+  .project h3 { margin: 0; font-size: 20px; }
+  .project p { margin: 0; color: var(--muted); grid-column: 1 / -1; }
+  .project .go { align-self: start; font-weight: 600; font-size: 15px; white-space: nowrap; }
+  .tags { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+  .tag { background: var(--accent-soft); color: var(--accent); font-size: 13px; font-weight: 600; padding: 3px 10px; border-radius: 999px; }
+  .pub { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .pub .title { font-weight: 600; font-size: 18px; margin: 0 0 6px; }
+  .pub .venue { color: var(--muted); margin: 0 0 12px; font-style: italic; }
+  .pub p { margin: 0 0 12px; }
+  .timeline { list-style: none; margin: 0; padding: 0; }
+  .timeline li { display: grid; grid-template-columns: 150px 1fr; gap: 24px; padding: 16px 0; border-bottom: 1px dashed var(--line); }
+  .timeline li:last-child { border-bottom: 0; }
+  .when { color: var(--muted); font-size: 15px; font-variant-numeric: tabular-nums; }
+  .role { font-weight: 600; margin: 0; }
+  .org { color: var(--muted); margin: 0 0 6px; font-size: 15px; }
+  .timeline p.d { margin: 0; font-size: 15px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .skills { display: flex; flex-wrap: wrap; gap: 8px; }
+  .skill { border: 1px solid var(--line); background: var(--card); border-radius: 8px; padding: 5px 12px; font-size: 14px; }
+  footer { padding: 40px 0 64px; border-top: 1px solid var(--line); color: var(--muted); font-size: 15px; }
+  @media (max-width: 720px) {
+    nav .links a:not(:last-child) { display: none; }
+    header { padding: 56px 0 40px; }
+    .timeline li { grid-template-columns: 1fr; gap: 4px; }
+    .two { grid-template-columns: 1fr; }
+    .project { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#">Rajib Hossain</a>
+    <div class="links">
+      <a href="#research">Research</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <p class="eyebrow">GIScience · Remote sensing · Environmental health</p>
+    <h1>Rajib Hossain</h1>
+    <p class="lede">PhD researcher in Geography at the <strong>University of Georgia</strong>. I use satellite imagery, street-level imagery and spatial analytics to understand <strong>how the places people live shape their health and safety</strong>, and who is most exposed when disasters hit.</p>
+    <div class="buttons">
+      <a class="btn primary" href="#projects">See my projects</a>
+      <a class="btn" href="https://github.com/rajibhossain26">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/hossainrajib">LinkedIn</a>
+    </div>
+  </div>
+</header>
+
+<section id="research">
+  <div class="wrap">
+    <h2>Research focus</h2>
+    <p class="sub">Human-centered geospatial methods for healthier and more equitable communities.</p>
+    <div class="themes">
+      <div class="theme"><div class="icon">🌡️</div><h3>Urban heat</h3><p>Land surface temperature, built environment and who carries the heat burden.</p></div>
+      <div class="theme"><div class="icon">🌳</div><h3>Greenness & tree canopy</h3><p>Measuring vegetation from satellite and street-level imagery, and its health effects.</p></div>
+      <div class="theme"><div class="icon">🏥</div><h3>Healthcare access</h3><p>Spatial accessibility to care with floating catchment and network models.</p></div>
+      <div class="theme"><div class="icon">🌀</div><h3>Disaster resilience</h3><p>Hurricane impacts, canopy loss and equitable evacuation planning.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <h2>Projects</h2>
+    <p class="sub">Open-source, documented and tested. Code on GitHub.</p>
+    <div class="projects">
+      <article class="project">
+        <h3>healthcare-access</h3>
+        <a class="go" href="https://github.com/rajibhossain26/healthcare-access">View code →</a>
+        <p>A Python package that measures how many doctors people can actually reach. It implements 2SFCA, Enhanced and Gaussian 2SFCA and gravity models with OpenStreetMap drive times and population-weighted equity metrics, and is covered by automated tests.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">NetworkX</span><span class="tag">OSMnx</span><span class="tag">Health geography</span></div>
+      </article>
+      <article class="project">
+        <h3>urban-heat-equity</h3>
+        <a class="go" href="https://github.com/rajibhossain26/urban-heat-equity">View code →</a>
+        <p>Who lives in the hottest, least green neighborhoods? Landsat surface temperature, NDVI and tree cover are summarized for every census tract in Google Earth Engine, joined to ACS data, and tested for disparities with robust regression and Moran's I.</p>
+        <div class="tags"><span class="tag">Google Earth Engine</span><span class="tag">Landsat</span><span class="tag">Census API</span><span class="tag">Spatial statistics</span></div>
+      </article>
+      <article class="project">
+        <h3>storm-canopy-change</h3>
+        <a class="go" href="https://github.com/rajibhossain26/storm-canopy-change">View code →</a>
+        <p>Maps likely tree-canopy loss after hurricanes such as Helene from Sentinel-2. It corrects for normal seasonal change, reports loss area by county, and includes an area-weighted accuracy assessment following Olofsson et al. (2014).</p>
+        <div class="tags"><span class="tag">Sentinel-2</span><span class="tag">Change detection</span><span class="tag">Accuracy assessment</span><span class="tag">Disasters</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="wrap">
+    <h2>Publication</h2>
+    <p class="sub">Peer-reviewed research.</p>
+    <div class="pub">
+      <p class="title">Gender differences in self-reported hurricane evacuation decisions among vulnerable populations: A comparative study of urban and rural areas</p>
+      <p class="venue">Journal of Transport Geography, 2026</p>
+      <p>Using survey data from Northwest Florida, the study examines how gender, geography and vulnerability shape evacuation decisions and transportation choices, especially among older adults and racial minorities, and argues for more equitable, gender-sensitive disaster planning.</p>
+      <a href="https://www.sciencedirect.com/science/article/abs/pii/S0966692326001407">Read the paper →</a>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2>Experience</h2>
+    <p class="sub">Research, teaching and professional GIS work.</p>
+    <ul class="timeline">
+      <li><span class="when">May – Aug 2026</span><div><p class="role">Research Assistant</p><p class="org">University of Georgia</p><p class="d">Used GIS and remote sensing to assess Hurricane Helene's impact on tree cover in the Augusta, Georgia, metropolitan area.</p></div></li>
+      <li><span class="when">2024 – present</span><div><p class="role">Teaching Assistant</p><p class="org">University of Georgia</p><p class="d">Taught hands-on GIS labs in ArcGIS Pro and ArcGIS Online, guided Community GIS Lab students digitizing historic Sanborn maps, and supported about 300 World Geography students.</p></div></li>
+      <li><span class="when">May – Jul 2024</span><div><p class="role">Researcher</p><p class="org">Florida State University</p><p class="d">Spatial accessibility research project.</p></div></li>
+      <li><span class="when">2022 – 2024</span><div><p class="role">Graduate Teaching Assistant → GIS Lab Instructor</p><p class="org">Florida State University</p><p class="d">Led GIS lab demonstrations, supervised students and assessed coursework.</p></div></li>
+      <li><span class="when">2020 – 2021</span><div><p class="role">Senior Coordinator, Planning & GIS</p><p class="org">Professional Associates Ltd., Dhaka, Bangladesh</p><p class="d">Prepared land acquisition plans and feasibility studies for public infrastructure, including the Dhaka Circular Route (Eastern Bypass), with DEM, image classification, surface and network analysis.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap two">
+    <div>
+      <h2>Education</h2>
+      <ul class="timeline">
+        <li><span class="when">2024 – present</span><div><p class="role">PhD, Geography & Environmental Studies</p><p class="org">University of Georgia</p></div></li>
+        <li><span class="when">2022 – 2024</span><div><p class="role">MS, Geography (GIScience)</p><p class="org">Florida State University</p></div></li>
+        <li><span class="when">2015 – 2019</span><div><p class="role">Bachelor of Urban & Regional Planning</p><p class="org">Khulna University of Engineering & Technology · Dean's List</p></div></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Skills</h2>
+      <p class="sub">Tools and methods I use.</p>
+      <div class="skills">
+        <span class="skill">Python</span><span class="skill">Google Earth Engine</span><span class="skill">ArcGIS Pro</span><span class="skill">ArcGIS Online</span>
+        <span class="skill">Remote sensing</span><span class="skill">Image classification</span><span class="skill">Change detection</span><span class="skill">GeoAI</span>
+        <span class="skill">Spatial statistics</span><span class="skill">Network analysis</span><span class="skill">DEM & raster analysis</span><span class="skill">Cartography & web mapping</span>
+        <span class="skill">Survey research</span><span class="skill">Scientific writing</span><span class="skill">Teaching</span>
+      </div>
+      <p class="sub" style="margin-top:20px">Languages: Bengali (native), English (full professional)</p>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <p><strong style="color:var(--ink)">Let's connect.</strong> I'm open to collaborations and roles in geospatial data science, environmental health and climate resilience. Reach me on <a href="https://www.linkedin.com/in/hossainrajib">LinkedIn</a> or see my work on <a href="https://github.com/rajibhossain26">GitHub</a>.</p>
+    <p>© 2026 Rajib Hossain · Athens, Georgia</p>
+  </div>
+</footer>
+
+</body>
+</html>
