@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Where chronic disease clusters in Georgia · Rajib Hossain</title>
+<meta name="description" content="I mapped diabetes, heart disease and unmet social needs across all 159 Georgia counties. A hot-spot analysis shows two rural belts, a metro-north cold spot, and a few places a simple ranking would miss.">
+<meta name="author" content="Rajib Hossain">
+<meta property="og:title" content="Where chronic disease clusters in Georgia">
+<meta property="og:description" content="I mapped diabetes, heart disease and unmet social needs across all 159 Georgia counties. A hot-spot analysis shows two rural belts, a metro-north cold spot, and a few places a simple ranking would miss.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://rajibhossain26.github.io/blog/georgia-chronic-disease-hot-spots/chronic_burden_hotspots.png">
+<meta property="article:published_time" content="2026-11-18">
+<style>
+  :root { --ink: #17212b; --muted: #5b6b7a; --line: #e3e8ee; --bg: #fbfcfd; --card: #ffffff; --accent: #1f7a5a; --accent-soft: #e6f2ed; }
+  @media (prefers-color-scheme: dark) { :root { --ink: #e8edf2; --muted: #9aa8b5; --line: #26313b; --bg: #0f151b; --card: #151d25; --accent: #4cc79a; --accent-soft: #15302a; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 18px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif; }
+  a { color: var(--accent); text-decoration: none; } a:hover { text-decoration: underline; }
+  nav { border-bottom: 1px solid var(--line); }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 56px; max-width: 960px; }
+  nav .brand { font-weight: 700; color: var(--ink); }
+  nav .links a { color: var(--muted); margin-left: 22px; font-size: 15px; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+  .meta { color: var(--muted); font-size: 15px; margin: 48px 0 8px; }
+  h1 { font-size: clamp(32px, 5vw, 44px); line-height: 1.12; letter-spacing: -0.02em; margin: 0 0 14px; }
+  .dek { font-size: 21px; color: var(--muted); margin: 0 0 32px; }
+  h2 { font-size: 24px; letter-spacing: -0.01em; margin: 44px 0 10px; }
+  figure { margin: 32px -24px; }
+  figure img { width: 100%; height: auto; display: block; border-radius: 10px; background: #fff; border: 1px solid var(--line); }
+  figcaption { color: var(--muted); font-size: 14px; margin-top: 8px; padding: 0 24px; }
+  .callout { background: var(--accent-soft); border-left: 4px solid var(--accent); padding: 14px 18px; border-radius: 6px; margin: 28px 0; }
+  .callout p { margin: 0; }
+  table { border-collapse: collapse; width: 100%; font-size: 16px; margin: 20px 0; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+  th { color: var(--muted); font-weight: 600; } td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .post-list { list-style: none; padding: 0; margin: 32px 0; }
+  .post-list li { padding: 22px 0; border-bottom: 1px solid var(--line); }
+  .post-list h2 { margin: 4px 0 6px; font-size: 22px; }
+  .post-list p { margin: 0; color: var(--muted); }
+  footer { margin-top: 64px; padding: 32px 0 64px; border-top: 1px solid var(--line); color: var(--muted); font-size: 15px; }
+  @media (max-width: 720px) { figure { margin: 28px 0; } figcaption { padding: 0; } nav .links a:not(:last-child) { display: none; } table { font-size: 14px; } th, td { padding: 6px 4px; } }
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a class="brand" href="/">Rajib Hossain</a><div class="links"><a href="/#projects">Projects</a><a href="/blog/">Blog</a><a href="/#contact">Contact</a></div></div></nav>
+<main class="wrap">
+<article>
+<p class="meta">November 18, 2026 · 6 min read</p>
+<h1>Where chronic disease clusters in Georgia</h1>
+<p class="dek">I mapped diabetes, heart disease and unmet social needs across all 159 Georgia counties. A hot-spot analysis shows two rural belts, a metro-north cold spot, and a few places a simple ranking would miss.</p>
+
+<p>About 12% of adults in Georgia have been diagnosed with diabetes. That statewide number hides a lot. County by county, the figure ranges from 8.3% in Oconee County to 18.9% in Randolph County, more than twice as high. With 159 counties, more than any state except Texas, Georgia is a place where averages tell you very little.</p>
+
+<p>I wanted to answer a more specific question: <strong>are the counties with the heaviest chronic-disease burden scattered across the state, or do they cluster together?</strong> The answer matters for policy. If high-burden counties sit next to each other, the causes are probably regional, and so are the solutions: shared hospitals and clinics, transportation, food systems and workforce programs that cross county lines.</p>
+
+<h2>The data</h2>
+<p>I used the CDC's <a href="https://data.cdc.gov/d/i46a-9kgh">PLACES 2025</a> estimates, which give age-adjusted prevalence for dozens of health measures in every US county. I combined five conditions into a <strong>chronic disease burden index</strong>: diabetes, obesity, coronary heart disease, stroke and high blood pressure. I combined four measures of unmet needs into a <strong>social needs index</strong>: food insecurity, housing insecurity, lack of reliable transportation and no health insurance. Then I tested for spatial clustering with Moran's I, a standard statistic in spatial analysis.</p>
+
+<figure>
+<img src="diabetes_food_insecurity_map.png" alt="Two maps of Georgia counties: diagnosed diabetes and food insecurity, both highest in the rural south and east-central parts of the state" loading="lazy">
+<figcaption>Diagnosed diabetes (left) and food insecurity (right) by county. The two maps are strikingly similar. Counties are drawn as approximate areas around their centers.</figcaption>
+</figure>
+
+<h2>1. Chronic disease is strongly clustered</h2>
+<p>If Georgia's counties were shuffled randomly across the map, Moran's I would be close to zero. For the chronic disease burden index it is <strong>0.54</strong>. Counties look a lot like their neighbors. I shuffled the counties 9,999 times, and not once did a random arrangement come out as clustered as the real map.</p>
+
+<h2>2. Two hot-spot belts in rural Georgia</h2>
+<p>Local Moran's I goes a step further and flags individual counties that are high <em>and</em> surrounded by high values. It finds <strong>37 hot-spot counties</strong>, home to about <strong>597,000 people</strong>, in two belts:</p>
+<ul>
+<li><strong>Southwest Georgia:</strong> Randolph, Stewart, Terrell, Calhoun, Baker, Clay, Quitman, Dougherty (Albany) and their neighbors</li>
+<li><strong>East-central to south-central Georgia:</strong> Jefferson, Washington, Johnson, Emanuel, Treutlen, Wheeler, Telfair and their neighbors</li>
+</ul>
+
+<figure>
+<img src="chronic_burden_hotspots.png" alt="Map of Georgia showing red hot-spot counties in the southwest and east-central regions and blue cold-spot counties in metro north Georgia" loading="lazy">
+<figcaption>Local clusters of chronic disease burden (local Moran's I, p &lt; 0.05). Red counties are hot spots, blue counties are cold spots and orange counties are high-burden outliers.</figcaption>
+</figure>
+
+<p>The gap between these belts and the rest of the state is large:</p>
+<table>
+<thead><tr><th>Cluster</th><th class="num">Counties</th><th class="num">People</th><th class="num">Diabetes</th><th class="num">Food insecurity</th><th class="num">Uninsured</th></tr></thead>
+<tbody>
+<tr><td>Hot spots</td><td class="num">37</td><td class="num">597,000</td><td class="num">15.3%</td><td class="num">27.6%</td><td class="num">16.9%</td></tr>
+<tr><td>Cold spots</td><td class="num">28</td><td class="num">4.69 million</td><td class="num">11.2%</td><td class="num">15.5%</td><td class="num">13.2%</td></tr>
+</tbody>
+</table>
+<p>In the hot spots, about one adult in seven has diagnosed diabetes and more than one in four reports food insecurity. That is nearly twice the cold-spot rate.</p>
+
+<h2>3. The cold spot is metro-north Georgia</h2>
+<p>The low-burden cluster runs from Cobb, Cherokee, Forsyth and Gwinnett up into the north Georgia mountains. Its 28 counties hold <strong>4.7 million people, 42% of the state</strong>. Much of Georgia's population lives in the healthiest part of the map, which is one more reason statewide averages look better than conditions in rural Georgia.</p>
+
+<h2>4. What a ranking would miss</h2>
+<p>A simple "top 10 counties" list and a hot-spot map tell different stories:</p>
+<ul>
+<li><strong>Clayton County</strong> has 16.1% adult diabetes and about 298,000 residents, roughly half as many people as all 37 hot-spot counties combined. Its neighbors in metro Atlanta have much lower burdens, so it stands out as a <em>high-burden outlier</em> rather than part of a rural belt. It needs a metro strategy, not a rural one.</li>
+<li><strong>Hancock and Macon</strong> counties are among the four highest in the state for diabetes, yet neither falls inside a statistically significant cluster. Their high rates are real, but their neighborhoods are more mixed, so a regional program designed around the belts could overlook them.</li>
+</ul>
+
+<h2>5. Health and social needs travel together</h2>
+<p>Across counties, the social needs index and the chronic disease index are almost perfectly aligned (r = 0.97). <strong>29 counties are in the top fifth of the state for both diabetes and food insecurity.</strong> Places where people struggle to afford food, keep housing or get to appointments are the same places carrying the most chronic disease.</p>
+
+<div class="callout"><p><strong>An important caveat.</strong> PLACES numbers are <em>model-based estimates</em>. The CDC builds them from national survey data combined with each county's demographics, so measures that share demographic drivers are correlated partly by construction. The overlap above describes <em>where</em> burdens coincide. It does not prove that food insecurity causes diabetes. County averages also hide differences within counties, and the hot-spot tests are screening tools that aren't corrected for multiple comparisons.</p></div>
+
+<h2>What this suggests</h2>
+<p>The pattern points toward <strong>regional, not county-by-county, responses</strong> in the two rural belts. That could mean mobile clinics and telehealth that serve several counties, transportation to care, and food-access programs planned across county lines. It also points toward a separate urban approach for places like Clayton County.</p>
+<p>Next, I plan to repeat the analysis with census-tract data to see variation within counties. I also want to combine it with my <a href="https://github.com/rajibhossain26/healthcare-access">healthcare-access</a> tool to test whether the hot-spot belts also have the least access to doctors.</p>
+
+<h2>Methods and code</h2>
+<p>Everything is reproducible. The data, the SQL database, the spatial statistics (written from scratch and unit-tested) and the figures are in the <a href="https://github.com/rajibhossain26/georgia-health-atlas">georgia-health-atlas</a> repository on GitHub, along with the full results tables.</p>
+</article>
+</main>
+<footer><div class="wrap"><p>Written by <a href="/">Rajib Hossain</a>, PhD researcher in GIScience &amp; environmental health at the University of Georgia. <a href="mailto:rajibhossain2k14@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/hossainrajib">LinkedIn</a> · <a href="https://github.com/rajibhossain26">GitHub</a></p></div></footer>
+</body>
+</html>
