@@ -8,6 +8,7 @@
 <meta property="og:title" content="Rajib Hossain · GIScience & Environmental Health">
 <meta property="og:description" content="PhD researcher at the University of Georgia working on urban heat, greenness, healthcare access and disaster resilience with remote sensing and spatial analysis.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://rajibhossain26.github.io/headshot.webp">
 <style>
   :root {
     --ink: #17212b; --muted: #5b6b7a; --line: #e3e8ee; --bg: #fbfcfd; --card: #ffffff;
@@ -28,6 +29,8 @@
   nav .links a { color: var(--muted); margin-left: 22px; font-size: 15px; }
   nav .links a:hover { color: var(--ink); text-decoration: none; }
   header { padding: 88px 0 56px; }
+  .hero { display: flex; align-items: center; justify-content: space-between; gap: 48px; }
+  .avatar { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 4px solid var(--card); box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18); }
   .eyebrow { color: var(--accent); font-weight: 600; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 14px; }
   h1 { font-size: clamp(40px, 6vw, 60px); line-height: 1.05; letter-spacing: -0.03em; margin: 0 0 20px; }
   .lede { font-size: 21px; color: var(--muted); max-width: 680px; margin: 0 0 30px; }
@@ -69,6 +72,8 @@
   @media (max-width: 720px) {
     nav .links a:not(:last-child) { display: none; }
     header { padding: 56px 0 40px; }
+    .hero { flex-direction: column-reverse; align-items: flex-start; gap: 24px; }
+    .avatar { width: 120px; height: 120px; }
     .timeline li { grid-template-columns: 1fr; gap: 4px; }
     .two { grid-template-columns: 1fr; }
     .project { grid-template-columns: 1fr; }
@@ -90,7 +95,8 @@
 </nav>
 
 <header>
-  <div class="wrap">
+  <div class="wrap hero">
+    <div class="hero-text">
     <p class="eyebrow">GIScience · Remote sensing · Environmental health</p>
     <h1>Rajib Hossain</h1>
     <p class="lede">PhD researcher in Geography at the <strong>University of Georgia</strong>. I use satellite imagery, street-level imagery and spatial analytics to understand <strong>how the places people live shape their health and safety</strong>, and who is most exposed when disasters hit.</p>
@@ -100,6 +106,8 @@
       <a class="btn" href="https://www.linkedin.com/in/hossainrajib">LinkedIn</a>
       <a class="btn" href="mailto:rajibhossain2k14@gmail.com">Email me</a>
     </div>
+    </div>
+    <img class="avatar" src="headshot.webp" alt="Portrait of Rajib Hossain" width="200" height="200">
   </div>
 </header>
 
